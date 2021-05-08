@@ -1,0 +1,42 @@
+﻿<!--Author: Abhishek Sawant, 8683623-->
+<Window x:Class="BindingPractice.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:BindingPractice"
+    mc:Ignorable="d"
+    Title="Binding Practice" Height="450" Width="300" ResizeMode="NoResize" Background="WhiteSmoke">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="1.7*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <TextBox Grid.Row="0" FontSize="30" Margin="8" Text="{Binding CheckTextBox}"></TextBox>
+        
+        <CheckBox Grid.Row="1" FontSize="30" Margin="8" IsChecked="{Binding CheckCheckBox}"></CheckBox>
+        
+        <RadioButton Grid.Row="2" FontSize="30" Margin="8" IsChecked="{Binding CheckRadioButton}"></RadioButton>
+        
+        <Label Grid.Row="3" FontSize="22" Margin="8" Content="{Binding CheckLabel}"></Label>
+
+        <ListBox Grid.Row="4" FontSize="15" Margin="8" SelectedIndex="{Binding Index}">
+            <ListBoxItem Content="1"></ListBoxItem>
+            <ListBoxItem Content="2"></ListBoxItem>
+            <ListBoxItem Content="3"></ListBoxItem>
+            <ListBoxItem Content="4"></ListBoxItem>
+        </ListBox>
+
+        <Button Grid.Row="5" FontSize="20" Margin="8 8 150 8" Content="Check" VerticalContentAlignment="Center" Click="Check_Button"></Button>
+        <Button Grid.Row="5" FontSize="20" Margin="150 8 8 8" Content="Clear" VerticalContentAlignment="Center" Click="Clear_Button"></Button>
+        
+        <ListBox Grid.Row="6" FontSize="15" Margin="8" ItemsSource="{Binding OutputList}"></ListBox>
+        
+    </Grid>
+</Window>
